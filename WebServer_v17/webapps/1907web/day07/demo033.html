@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<select>
+  <option>请选择</option>
+  <option value="0">100</option>
+  <option value="1">200</option>
+  <option value="2">300</option>
+  <option value="3">400</option>
+  <option value="4">500</option>
+</select>
+  
+<select>
+  <option>请选择</option>
+</select>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+
+<script type="text/javascript">
+  var arr = [["110","120","130","140","150"],
+	  		 ["210","220","230","240","250"],
+	  		 ["310","320","330","340","350"],
+	  		 ["410","420","430","440","450"],
+	  		 ["510","520","530","540","550"],
+	  		]
+  //给第一个下拉选添加值改变事件
+  $("select:first").change(function(){
+	  //每次添加新的option之前 覆盖掉之前添加的内容
+	  $("select:last").html("<option>请选择</option>");
+	  //取出点击对应的数组
+	  var cities = arr[$("select:first").val()];
+	  //遍历
+	  for(var i = 0;i < cities.length;i++){
+		  var name = cities[i];
+		  //创建新的option
+		  var o = $("<option></option>");
+		  o.text(name);
+		  //把option添加到第二个下拉选里面
+		  $("select:last").append(o);
+	  }
+  });
+
+</script>
+
+</body>
+</html>

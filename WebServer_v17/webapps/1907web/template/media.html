@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bootstrap Template</title>
+<style type="text/css">
+.my-text {
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .my-text {
+    font-size: 2rem;
+  }
+  body {
+    background-color: lightblue;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .my-text {
+    font-size: 1.5rem;
+  }
+  body {
+    background-color: lightpink;
+  }
+}
+</style>
+</head>
+<body>
+  <h1>媒体查询演示</h1>
+  <p class="my-text">媒体查询</p>
+  <span class="my-text">Hello World!!</span>
+  <p>图中三个浏览器不同的宽度,代表三种不同的显示设备,对不同设备编写针对性的样式,实现响应式布局</p>
+</body>
+</html>

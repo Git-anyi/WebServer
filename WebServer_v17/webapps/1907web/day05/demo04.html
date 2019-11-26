@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<input type="text" placeholder="请输入一个1-100的数字" id="i1">
+<input type="button" value="猜一猜" onclick="myfn()">
+
+<div id="d1"></div>
+
+<script type="text/javascript">
+  //获取0-100之间的随机数
+  var x = parseInt(Math.random()*100)+1;
+  //记录猜的次数
+  var count = 0;
+  function myfn(){
+	  count++;
+	  if(i1.value > x){
+		  d1.innerText = "大了";
+	  }else if(i1.value < x){
+		  d1.innerText = "小了";
+	  }else{
+		  d1.innerText = "恭喜你第"+count+"次答对";
+	  }
+  }
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+  //页面加载完成事件
+  onload = function(){
+    d1.innerText = "来了老弟";
+  }
+  
+  /* 下拉选值改变时 触发此方法 */
+  function changefn(){
+	  alert(s1.value);
+  }
+  
+</script>
+
+</head>
+<body>
+
+<select id="s1" onchange="changefn()">
+  <option>北京</option>
+  <option>上海</option>
+  <option>广州</option>
+</select>
+
+<div id="d1"></div>
+
+</body>
+</html>

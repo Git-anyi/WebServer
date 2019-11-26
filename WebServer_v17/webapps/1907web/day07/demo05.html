@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<input type="text" placeholder="姓名">
+<input type="text" placeholder="年龄">
+<input type="text" placeholder="工资">
+<input type="button" value="添加">
+
+<table border="1">
+  <tr>
+    <th>姓名</th><th>年龄</th>
+    <th>工资</th><th>操作</th>
+  </tr>
+</table>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+
+<script type="text/javascript">
+  //给按钮添加点击事件
+  $("input:last").click(function(){
+	  
+	  //获取用户输入的信息
+	  var name = $("input:eq(0)").val();
+	  var age = $("input:eq(1)").val();
+	  var sal = $("input:eq(2)").val();
+	  //alert(name+":"+age+":"+sal);
+	  
+	  //创建四个td
+	  var nametd = $("<td></td>");
+	  var agetd = $("<td></td>");
+	  var saltd = $("<td></td>");
+	  var deltd = $("<td><input type='button' value='删除'></td>");
+	  
+	  //给按钮添加点击事件
+	  deltd.children().click(function(){
+		 $(this).parent().parent().remove(); 
+	  });
+	  
+	  //把用户输入的内容放到td里面
+	  nametd.text(name);
+	  agetd.text(age);
+	  saltd.text(sal);
+	  
+	  //把td放到tr里面
+	  var tr = $("<tr></tr>");
+	  tr.append(nametd);
+	  tr.append(agetd);
+	  tr.append(saltd);
+	  tr.append(deltd);
+	  
+	  //把tr放到table里面
+	  $("table").append(tr);
+	  
+  });
+
+</script>
+
+</body>
+</html>

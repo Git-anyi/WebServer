@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+  img{
+    width: 20px;
+    height: 20px;
+  }
+
+  body{
+    background-color: black;
+  }
+
+</style>
+
+</head>
+<body>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+<script type="text/javascript">
+	//获取屏幕的高
+	var h = $(window).height();
+	var w = $(window).width();
+	
+	var count = 0;
+	
+	setInterval(function(){
+		var img = $("<img src='snow.png'>");
+		
+		img.css("position","absolute");
+		
+		//获取0-1000的随机值
+		var left = parseInt(Math.random()*w);
+		img.css("left",left + "px");
+		
+		$("body").append(img);
+		
+		$("img").animate({"top":"1000px"},1000);
+		
+		
+	},1);
+
+</script>
+
+</body>
+</html>

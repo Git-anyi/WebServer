@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+
+<input type="button" value="按钮" onclick="alert('按钮触发!')">
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+<script type="text/javascript">
+
+	//只会执行一次的定时器
+	setTimeout(function(){
+		//事件模拟
+		$("input").trigger("click");
+	},3000);
+
+	//给页面中的div添加鼠标移入移出事件
+	$("div").hover(function(){//鼠标移入时触发
+		$(this).css("color","red");		
+	},function(){//鼠标移出时触发
+		$(this).css("color","green");
+	});
+	
+</script>
+
+
+</body>
+</html>

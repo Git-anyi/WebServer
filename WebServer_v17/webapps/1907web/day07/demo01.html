@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div>xxx</div>
+<input type="radio" value="m" name="gender">男
+<input type="radio" value="w" name="gender">女
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+
+<script type="text/javascript">
+  //修改文本
+  //$("div").text("<h1>放假啦!</h1>");
+  //修改html内容
+  //$("div").html("<h1>放假啦!</h1>"); 
+  //修改样式
+  //$("div").css("color","red");
+  //批量修改样式
+  $("div").css({"color":"green","background":"red","font-size":"100px"}); 
+  //获取css的值
+  alert($("div").css("color"));
+  
+  //修改元素的属性值
+  $("input:last").attr("checked","checked");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<ul>
+  <li>亲戚
+    <ul>
+      <li>习大大</li>
+      <li>老干妈</li>
+      <li>马大姐</li>
+    </ul>
+  </li>
+  
+  <li>同事
+    <ul>
+      <li>马云</li>
+      <li>马化腾</li>
+      <li>任正非</li>
+    </ul>
+  </li>
+  
+  <li>传销佬
+    <ul>
+      <li>彭某</li>
+      <li>梁某</li>
+      <li>陈某</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- 引入jQuery框架 -->
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+
+<script type="text/javascript">
+  
+  //隐藏所有二层ul
+  $("li>ul").hide();
+  //第一层li添加点击事件
+  $("body>ul>li").click(function(){
+	 //this 在事件中的 this代表 触发事件的标签
+	 //this属于js对象
+	 //此时的this代表的就是点击的li标签
+	 //先把js对象li转成jq对象
+	 //再通过li获取里面的ul
+	 $(this).children().toggle();
+	 
+	 //通过点击的li得到其它两个li里面的ul让其隐藏
+	 $(this).siblings().children().hide();
+  });
+  
+</script>
+
+</body>
+</html>

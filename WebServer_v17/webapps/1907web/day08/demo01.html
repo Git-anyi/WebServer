@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<ul>
+  <li>亲戚
+    <ul>
+      <li>习大大</li>
+      <li>老干妈</li>
+      <li>马大姐</li>
+    </ul>
+  </li>
+  
+  <li>同事
+    <ul>
+      <li>马云</li>
+      <li>马化腾</li>
+      <li>任正非</li>
+    </ul>
+  </li>
+  
+  <li>传销佬
+    <ul>
+      <li>彭某</li>
+      <li>梁某</li>
+      <li>陈某</li>
+    </ul>
+  </li>
+</ul>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+<script type="text/javascript">
+  
+  $("li>ul").hide();
+  $("body>ul>li").click(function(){
+	 $(this).children().toggle();
+	 $(this).siblings().children().hide();
+  });
+  
+</script>
+
+</body>
+</html>

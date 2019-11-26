@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+<script type="text/javascript">
+
+	setInterval(function(){
+		var img = $("<img src='../imgs/2.gif'>");
+		//修改定位方式为绝对定位
+		img.css("position","absolute");
+		
+		//获取0-1000的随机值
+		var top = parseInt(Math.random()*1000);
+		img.css("top",top + "px");
+		
+		$("body").append(img);
+		//右侧移动
+		img.animate({"left":"1500px"},1000)
+			.fadeOut(1000,function(){
+				img.remove();
+			});
+	},100);
+
+</script>
+
+</body>
+</html>

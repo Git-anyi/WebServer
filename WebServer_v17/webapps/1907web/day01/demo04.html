@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- src: 路径 
+	相对路径:访问站内资源时使用
+		a. 页面和图片在同一目录: 直接写图片名
+		b. 图片在页面的上级目录: ../图片名
+		c. 图片在页面的下级目录: 文件夹名/图片名
+	绝对路径:访问站外资源时使用(盗链)
+	以http开头,好处:节省本站资源,	坏处:有可能找不到图片
+	alt: 图片不能正常显示时显示的文本
+	title: 图片上悬停时显示的文本
+	
+	width/height: 1.像素 2.百分比
+	如果只设置宽度,高度会进行等比例缩放
+-->
+	<img title="这是标题" width="300" height="300" src="http://cdn.tmooc.cn/bsfile//courseImg///E193CCAC163B4B8DB7B3969CD8F7BFB2.jpg">
+	<img title="这是标题" width="50%" src="http://cdn.tmooc.cn/bsfile//courseImg///E193CCAC163B4B8DB7B3969CD8F7BFB2.jpg">
+	<img src="abc/2.gif">
+	<img alt="这是个视频" src="https://live.bilibili.com/21585990">
+</body>
+</html>

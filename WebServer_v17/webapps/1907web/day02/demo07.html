@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/* 子孙后代选择器 */
+/* 选取body里面div里面所有的p */
+/* body div p{
+  color: red;
+} */
+
+/* div div div p {
+	color: red;
+} */
+
+/* 子元素选择器  */
+body>div>p{
+/* body里面的div里面的p子元素  */
+  color: red;
+}
+
+</style>
+
+</head>
+<body>
+  <p>p1</p>
+  
+  <div>
+    <p>p2</p>
+    
+    <div>
+      <p>p3</p>
+      
+    <div>
+    </div>
+      <p>p4</p>
+      <div>
+        <p>p5</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

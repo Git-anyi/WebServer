@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+  body{
+  
+    background-image: url("bg1.jpg");
+  
+  }
+  
+  img{
+  
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    
+  }
+  
+  #s_h3{
+  
+    float: left;
+    
+  }
+  
+  #f_h3{
+  
+    float: right;
+  
+  }
+  
+</style>
+
+</head>
+<body>
+
+<h3 id="s_h3">成功数量:0</h3>
+<h3 id="f_h3">失败数量:0</h3>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+<script type="text/javascript">
+	//统计成功数量和失败数量的两个变量
+	var s_count = 0;
+	var f_count = 0;
+
+	//得到窗口的宽高
+	var w = $(window).width();
+	var h = $(window).height();
+	//修改body的背景图片尺寸
+	$("body").css("background-size",w + "px " + h + "px");
+	
+	//窗口尺寸改变事件
+	onresize = function(){
+		
+		//得到窗口的宽高
+		w = $(window).width();
+		h = $(window).height();
+		//修改body的背景图片尺寸
+		$("body").css("background-size",w + "px " + h + "px");
+		
+	}
+	
+	//开启定时器每隔一段时间添加一个僵尸图片
+	setInterval(function(){
+		
+		//0-29/30  0
+		//30-59/30  1
+		//60-89/30  2
+		//90-../30  3
+		//让僵尸图片和干掉 的僵尸数量建立关系
+		//每隔30个换一种僵尸
+		var type = parseInt(s_count/30);
+		//如果大于3则等于3
+		type = type > 3 ? 3 : type;
+		
+		console.log(type);
+		
+		var img = $("<img src='zomb" + type + ".png'>");
+		$("body").append(img);
+		
+		//控制僵尸的位置
+		//得到随机的top
+		var top = parseInt(Math.random()*(h - 100));
+		img.css({"top":top + "px","left":w + "px"});	
+		
+		//给僵尸添加鼠标移入事件
+		img.mouseover(function(){
+			//删除触发事件的僵尸图片
+			img.remove();
+			
+			//让成功数量+1
+			s_count++;
+			//显示到h3中
+			$("#s_h3").text("成功数量:"+s_count);
+		});
+		
+	},100);
+	
+	//开启定时器移动僵尸图片
+	setInterval(function(){
+		//得到所有僵尸图片 并且遍历
+		$("img").each(function(){
+			
+			//得到僵尸图片当前得left值
+			var left = parseInt($(this).css("left"));//去掉px  100px  100
+			//每隔30个僵尸移动速度+1
+			left -= 1 + parseInt(s_count/30);
+			//把修改之后的left赋值回去
+			$(this).css("left",left + "px");
+			
+			//判断僵尸到房子的时候删除僵尸
+			if(left <= 100){
+				$(this).remove();
+				
+				//让失败数量-1
+				var a = -(f_count--);
+				//显示到h3中
+				$("#f_h3").text("失败数量:" + a);
+			}
+			
+		});
+		
+	},10);
+	
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+  <style type="text/css">
+    div,span{
+      border: 1px solid red;
+    }
+    
+    /* span是行内元素不能修改宽高 */
+    span{
+      width: 100px;
+      height: 100px;
+      /* 把默认的行内元素inline改成块级元素block span就可以修改宽高了 */
+      display: inline-block;
+    }
+    
+    img{
+      width: 50px;
+    }
+  </style>  
+
+</head>
+<body>
+
+  <img src="../imgs/2.gif">
+  <img src="../imgs/2.gif">
+  <img src="../imgs/2.gif">
+  <img src="../imgs/2.gif">
+  
+  <div>div1</div>
+  <div>div2</div>
+  <div>div3</div>
+  <span>span1</span><span>span2</span><span>span3</span>
+  
+</body>
+</html>

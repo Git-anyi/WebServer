@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bootstrap Template</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="../bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+</head>
+<body>
+  <ul class="nav nav-tabs">
+    <!-- #仍然在当前页面 不做跳转
+                          如果是空字符串会往当前页面跳转 导致页面刷新 -->
+    <li class="active"><a href="#"><span class="glyphicon glyphicon-plus">新增</span></a></li>
+    <li ><a href="#"><span class="glyphicon glyphicon-pencil">编辑</span></a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-search">查询</span></a></li>
+  </ul>
+  
+  <div><b>左对齐加粗</b></div>
+  <!-- 通过class控制文本水平对齐方式 -->
+  <div class="text-center"><i>中间对齐斜体</i></div>
+  <div class="text-right"><small>右对齐小字</small></div>
+  
+  <button type="button" class="btn btn-primary btn-lg">按钮1</button>
+  <button type="button" class="btn btn-info">按钮2</button>
+  <button type="button" class="btn btn-warning btn-sm">按钮3</button>
+  <button type="button" class="btn btn-danger btn-xs">按钮4</button>
+  
+</body>
+<script type="text/javascript" src="../bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/respond.min.js"></script>
+
+<script type="text/javascript">
+
+  $("li").click(function(){
+    //让点击的激活
+    $(this).attr("class","active");
+    //让其它的变成非active状态
+    $(this).siblings().attr("class","");
+  });
+
+</script>
+
+</html>

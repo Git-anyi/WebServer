@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<select>
+ <option>请选择</option>
+ <option value="0">河北</option>
+ <option value="1">河南</option>
+ <option value="2">山东</option>
+</select>
+
+<select>
+  <option>请选择</option>
+</select>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+<script type="text/javascript">
+  
+  var arr = [["秦皇岛","唐山","石家庄"],["郑州","洛阳","焦作"],["青岛","济南","烟台"]];
+  $("select:first").change(function(){
+    $("select:last").html("<option>请选择</option>");
+    var cities = arr[$("select:first").val()];
+    for(var i = 0;i < cities.length;i++){
+      var name = cities[i];
+      //创建option
+      var o = $("<option></option>");
+      o.text(name);
+      $("select:last").append(o);
+    }
+  });
+</script>
+
+</body>
+</html>

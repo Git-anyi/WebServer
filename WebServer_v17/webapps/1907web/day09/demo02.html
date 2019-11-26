@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bootstrap Template</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="../bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+</head>
+<body>
+  <ul class="nav nav-tabs">
+    <!-- #仍然在当前页面 不做跳转
+                          如果是空字符串会往当前页面跳转 导致页面刷新 -->
+    <li class="active"><a href="#">首页</a></li>
+    <li><a href="#">消息</a></li>
+    <li><a href="#">排行榜</a></li>
+  </ul>
+  
+  <h3>添加魏蜀吴</h3>
+  <ul class="nav nav-pills nav-stacked">
+  
+    <li class="active"><a href="#">魏</a></li>
+    <li><a href="#">蜀</a></li>
+    <li><a href="#">吴</a></li>
+  
+  </ul>
+  
+</body>
+<script type="text/javascript" src="../bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/respond.min.js"></script>
+
+<script type="text/javascript">
+
+	$("li").click(function(){
+		//让点击的激活
+		$(this).attr("class","active");
+		//让其它的变成非active状态
+		$(this).siblings().attr("class","");
+	});
+
+</script>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="d1">1</div>
+<script type="text/javascript">
+
+  //console.log("1");
+  var x = 0;
+  //开启定时器 每隔1秒执行某段代码
+  var timer = setInterval(function(){
+	  d1.innerText = ++x;
+	  if(x == 5){
+		  //停止定时器
+		  clearInterval(timer);
+	  }
+  },1000);
+  
+  //每隔半秒钟往页面中添加一张图片
+  setInterval(function(){
+	  //innerHTML修改标签的html内容
+	  // = 是覆盖     += 是追加
+	  document.body.innerHTML += "<img src='../imgs/2.gif'>"
+  },1000);
+
+</script>
+
+</body>
+</html>

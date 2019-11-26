@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+  <style type="text/css">
+    #d1{
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      /* 添加外边距 */
+      /* margin-left: 100px; 一个方向 */
+      /* margin: 100px;  四个方向*/
+      /* margin: 50px 100px;  上下50 左右100*/
+      /* margin: 0 auto;  上下0 左右居中*/
+      /* margin: 10px 20px 30px 40px;  上右下左 顺时针*/
+    }
+    
+    #d2{
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      
+      /* 添加外边距 */
+      /* margin-top: 0px; */
+    }
+    
+    #s1{
+      margin-left: 50px;
+      margin-right: 50px;
+      /* 行内元素上下外边距无效 */
+      margin-bottom: 50px;
+    }
+    
+  </style>
+
+</head>
+<body>
+
+  <div id="d1">div1</div>
+  <span id="s1">span1</span><span>span2</span>
+  <div id="d2">div2</div>
+  
+</body>
+</html>

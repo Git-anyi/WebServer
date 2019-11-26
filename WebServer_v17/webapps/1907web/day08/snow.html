@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+  body{
+    background-color: black;
+  }
+
+</style>
+
+
+</head>
+<body>
+
+<input type="button" value="向左边飘">
+<input type="button" value="向右边飘">
+
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+<script type="text/javascript">
+
+	var count = 0;
+	//开启定时器添加雪花图片
+	setInterval(function(){
+		//创建雪花图片
+		var img = $("<img src='snow.png'>");
+		
+		//修改成绝对定位  修改宽度为20-40的随机数
+		var size = parseInt(20) + parseInt(Math.random()*21);
+		
+		//得到屏幕的宽高
+		var w = $(window).width();
+		var h = $(window).height();
+		
+		//得到一个随机left值 0-(屏幕宽 - 雪花宽)
+		var left = parseInt(Math.random()*(w - size));
+		
+		img.css({"position":"absolute","width":size + "px","left":left + "px"});
+		
+		$("body").append(img);
+		
+		$("input:first").click(function(){
+			count = -500;
+		});
+		
+		$("input:last").click(function(){
+			count = 500;
+		});
+		
+		//让雪花图片往下移动 20-40  * 100  2秒 - 4秒
+		$("img").animate({"top":(h - size) + "px","left":left + count + "px"},size*200)
+			.fadeOut(1000,function(){
+				//淡出后 删除雪花图片
+				img.remove();
+			});
+		
+	},10);
+
+</script>
+
+</body>
+</html>

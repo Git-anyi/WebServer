@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>订单列表</h3>
+<input type="checkbox" value="30">鼠标30元<br>
+<input type="checkbox" value="100">键盘100元<br>
+<input type="checkbox" value="2000">苹果手机2000元<br>
+<input type="checkbox" value="5000">华为手机5000元<br>
+<input type="checkbox" id="all">全选<br>
+<p>总价:0元</p>
+
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+
+<script type="text/javascript">
+  //给所有的多选添加点击事件
+  $("input").click(function(){
+	  if(this.id == "all"){
+		  //得到当前全选的状态
+		  var status = $("#all").attr("checked");
+		  //this是js对象代表的是当前点击的全选
+		  //先转成jq对象 得到其他几个兄弟
+		  //把全选的状态赋值到其他几个兄弟
+		  $(this).siblings("input").attr("checked",status);
+	  }
+	  
+	  //计算总价
+	  var total = 0;
+	  var count = 0;
+	  $("input:not(#all)").each(function(){
+		 //this代表当前遍历的标签对象
+		 //console.log(this.value);
+		 //判断当前遍历的input是否选中
+		 if(this.checked){
+			 count++;
+			total += parseInt(this.value);			 
+		 }
+	  });
+	  $("#all").attr("checked",count==4?"checked":"");
+	  $("p").text("总价:"+total+"元");
+  });
+</script>
+
+</body>
+</html>

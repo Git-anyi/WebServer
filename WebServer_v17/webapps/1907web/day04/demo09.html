@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  /* for(var i = 0;i < 10; i++){
+	  //alert(i);
+	  //控制台输出
+	  console.log(i);
+  } */
+  
+  //无惨无返回值
+  function fn1(){
+	  alert("fn1");
+  }
+  //调用方法
+  //fn1();
+  
+  
+  //有参无返回值
+  function fn2(name,age){
+	  alert(name+":"+age);
+  }
+  //fn2("来了老弟",12);
+  
+  
+  //无参有返回值
+  function fn3(){
+	  return "来了老哥";
+  }
+  //var s = fn3();
+  //alert(s);
+  
+  //有参有返回值
+  function fn4(x,y){
+	  return x*y;
+  }
+  //var result = fn4(8,7);
+  //alert(result);
+  
+  
+  //第二种声明方法的方式
+  var fn5 = function(){
+	  alert("fn5");
+  }
+  //fn5();
+  
+  
+  //第三种
+  var fn6 = new Function("name","age","alert(name+':'+age)");
+  fn6("带飞",5);
+  
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="text" id="i1">
+<input type="text" id="i2">
+<input type="button" value="加" onclick="myfn(1)">
+<input type="button" value="减" onclick="myfn(2)">
+<input type="button" value="乘" onclick="myfn(3)">
+<input type="button" value="除" onclick="myfn(4)">
+
+<div id="d1"></div>
+
+<script type="text/javascript">
+  function myfn(x){
+	  //取出用户输入的数值
+	  var n1 = parseFloat(i1.value);
+	  var n2 = parseFloat(i2.value);
+  //判断用户点击的按钮是加减还是乘除
+  switch(x){
+  case 1:
+	  d1.innerText=isNaN(i1.value && i2.value)?"格式错误":n1+n2;
+  	  break;
+  case 2:
+	  d1.innerText=isNaN(i1.value)?"格式错误":n1-n2;
+      break;
+  case 3:
+	  d1.innerText=isNaN(i1.value && i2.value)?"格式错误":n1*n2;
+      break;
+  case 4:
+	  d1.innerText=isNaN(i1.value && i2.value)?"格式错误":n1/n2;
+      break;
+  }
+  
+  
+  }
+  
+  function myfn1(){
+	  innerText=isNaN(i1.value && i2.value)?"格式错误":parseFloat(i1.value)+parseFloat(i2.value);
+  }
+  
+  function myfn2(){
+	  d1.innerText=isNaN(i1.value && i2.value)?"格式错误":i1.value-i2.value;
+  }
+  
+  function myfn3(){
+	  d1.innerText=isNaN(i1.value && i2.value)?"格式错误":i1.value*i2.value;
+  }
+  
+  function myfn4(){
+	  d1.innerText=isNaN(i1.value && i2.value)?"格式错误":i1.value/i2.value;
+  }
+</script>
+
+</body>
+</html>

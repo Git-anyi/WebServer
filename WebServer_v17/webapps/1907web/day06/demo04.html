@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<input type="button" value="添加">
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+
+<!-- 引入jQuery框架 -->
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+
+<script type="text/javascript">
+  $("input").click(function(){
+	  var d = $("<div>我是新来的</div>");
+	  //$("body").append(d);//添加到后面
+	  //$("body").prepend(d);//添加到前面
+	  
+	  //插入到div2的前面
+	  //$("div:contains('div2')").before(d);
+	  //插入到div2的后面
+	  //$("div:contains('div2')").after(d);
+	  //删除div2
+	  //$("div:contains('div2')").remove();
+	  //修改div2的内容
+	  $("div:contains('div2')").text("啦啦啦啦");
+  })
+</script>
+
+</body>
+</html>

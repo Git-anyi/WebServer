@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+  div{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+  }
+
+</style>
+
+</head>
+<body>
+<div onmouseover="overfn()" onmouseout="outfn()"
+     onmousedown="downfn()" onmouseup="upfn()"
+     onmousemove="movefn()" >
+</div>
+
+<!-- 文本输入框中添加键盘按下抬起时件 -->
+<input type="text" onkeydown="keydownfn()" onkeyup="keyupfn()">
+
+<script type="text/javascript">
+
+  function overfn(){
+	  console.log("鼠标移入");
+  }
+  
+  function outfn(){
+	  console.log("鼠标移出");
+  }
+  
+  function downfn(){
+	  console.log("鼠标按下");
+  }
+  
+  function upfn(){
+	  console.log("鼠标抬起");
+  }
+  
+  function movefn(){
+	  console.log("鼠标移动");
+  }
+  
+  
+  function keydownfn(){
+	  //event事件对象 里面保存和事件相关的信息
+	  //获取按键编码
+	  var code = event.keyCode;
+	  console.log("键盘按下:"+code);
+  }
+  
+  function keyupfn(){
+	  var code = event.keyCode;
+	  //将按键代码转换成字符
+	  console.log("键盘抬起:"+String.fromCharCode(code));
+  }
+  
+
+</script>
+
+</body>
+</html>

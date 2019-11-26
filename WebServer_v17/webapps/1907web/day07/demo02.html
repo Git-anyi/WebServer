@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div>div1</div>
+<div>div2</div>
+
+<ul>
+  <li>北京</li>
+  <li>上海</li>
+</ul>
+
+爱好:<input type="checkbox">打篮球
+   <input type="checkbox">撸代码
+   <input type="text" placeholder="说点儿啥...">
+   <input type="button" value="修改">
+   
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+
+<script type="text/javascript">
+  $("input:last").click(function(){
+	 $("div:first").text("做完下课");
+	 $("div:last").html("<h1>div2</h1>");
+	 $("input:eq(1)").attr("checked","checked");
+	 $("input[type='text']").val("啦啦啦");
+	 $("div:first").css({"color":"yellow","background-color":"blue"});
+  });
+  
+</script>
+
+</body>
+</html>

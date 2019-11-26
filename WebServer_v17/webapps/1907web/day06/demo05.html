@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<input type="text">
+<input type="button" value="添加最前面">
+<input type="button" value="添加最后面">
+<input type="button" value="添加上海前面">
+<input type="button" value="添加上海后面">
+<input type="button" value="删除上海">
+
+<ul>
+  <li>北京</li>
+  <li>上海</li>
+  <li>广州</li>
+</ul>
+
+<!-- 引入jQuery框架 -->
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+<script type="text/javascript">
+
+  $("input:eq(1)").click(function(){
+	  //创建一个li
+	  var li = $("<li></li>");
+	  //修改li的文本内容
+	  li.text($("input:first").val());
+	  //添加到最前面
+	  $("ul").prepend(li);
+	  
+  });
+  
+  $("input:eq(2)").click(function(){
+	  //创建一个li
+	  var li = $("<li></li>");
+	  //修改li的文本内容
+	  li.text($("input:first").val());
+	  //添加到最后面
+	  $("ul").append(li);
+	  
+  });
+  
+  $("input:eq(3)").click(function(){
+	  //创建一个li
+	  var li = $("<li></li>");
+	  //修改li的文本内容
+	  li.text($("input:first").val());
+	  //添加上海前面
+	  $("li:contains('上海')").before(li);
+	  
+  });
+  
+  $("input:eq(4)").click(function(){
+	  //创建一个li
+	  var li = $("<li></li>");
+	  //修改li的文本内容
+	  li.text($("input:first").val());
+	  //添加上海前面
+	  $("li:contains('上海')").after(li);
+	  
+  });
+  
+  $("input:eq(5)").click(function(){
+	  //删除上海
+	  $("li:contains('上海')").remove();
+	  
+  });
+
+</script>
+
+</body>
+</html>

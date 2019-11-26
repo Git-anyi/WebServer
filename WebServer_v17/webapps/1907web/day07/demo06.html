@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+  body{
+    margin: 0;/* 去掉自带外边距 */
+    background-image: url("bg1.jpg");
+  }
+  
+  img{
+    position: absolute;/* 绝对定位 */
+    width: 60px;
+    height: 60px;
+  }
+  
+  div{
+    width: 100%;
+    height: 100%;
+  }
+
+</style>
+
+</head>
+<body>
+
+<h3>成功数量</h3>
+<h3>失败数量</h3>
+
+<div onmouseover="overfn()"></div>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+
+<script type="text/javascript">
+  //修改背景图片的尺寸为窗口尺寸
+  var w = $(window).width();
+  var h = $(window).height();
+  $("body").css("background-size",w+"px "+h+"px")
+  
+  //窗口尺寸改变事件
+  onresize = function(){
+	  w = $(window).width();
+	  h = $(window).height();
+	  $("body").css("background-size",w+"px "+h+"px")
+  }
+  
+  
+  var succed = 0;
+  //开启定时器添加僵尸图片
+  setInterval(function(){
+	  var img = $("<img src='zomb0.png'>");
+	  //获取一个随机的top值
+	  //范围是窗口高度-僵尸高度
+	  var top = parseInt(Math.random()*(h-60));
+	  img.css({"top":top+"px","left":w+"px"})
+	  $("body").append(img);
+	  
+	  $(img).mouseover(function(){
+		  succed+=1;
+		  $(this).remove();
+		  $("h3:first").text("成功数量:"+succed);
+	  });
+  },1000);
+  
+  //定义失败
+  var fail = 0;
+  //开启定时器移动图片
+  setInterval(function(){
+	 //得到所有的图片
+	 $("img").each(function(){
+		//得到原来的left的值
+		var left = parseInt($(this).css("left"));
+		//让left-=2
+		left -= 2;
+		
+		if(left<-60){
+			$(this).remove();
+			fail+=1;
+			$("h3:last").text("失败数量:"+fail);
+		}
+		
+		//再把left赋值回去
+		$(this).css("left",left+"px");
+	 });
+  },1);
+  
+  
+  
+  
+</script>
+
+</body>
+</html>

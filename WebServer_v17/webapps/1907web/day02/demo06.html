@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+#b{
+  color: red;
+}
+
+.c1{
+  color: green;
+}
+
+/* 属性选择器 */
+input[type='text']{
+  background-color: green;
+}
+
+/*让h2,id=b和class=c1的所有元素背景色为紫色 */
+/* 分组选择器   将多个选择器通过,合并成一个 */
+h2,#b,.c1{
+  background-color: purple;
+}
+
+</style>
+
+</head>
+<body>
+
+  <h2>我是个h2</h2>
+
+  <h3>aaa</h3>
+  <h3 id="b">bbb</h3>
+  <h3 class="c1">ccc</h3>
+  
+  <div>div1</div>
+  <div>div2</div>
+  <div class="c1">div2</div>
+  
+  <p>p1</p>
+  <p>p2</p>
+  <p class="c1">p3</p>
+  
+  <input type="text" placeholder="请输入用户名">
+  <input type="password" placeholder="请输入密码">
+  
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+  <head>
+     <!-- 页面如果看到乱码,通常是这里拼写不对 -->
+        <meta charset = "UTF-8">
+     <title>我的首页</title>
+  </head>
+
+  <body>
+     <!-- 
+     在页面中使用相对路径指定其他资源时,由于该页面是浏览器解释的,因此浏览器认为"./"当前目录为当前页面所在的目录.
+     例如:访问当前index.html页面时,我们指定路径:http://localhost:8088/myweb/index.html
+     那么浏览器认为当前目录为:http://localhost:8088/myweb/   因此,图片指定的路径是:"./th.jpg",浏览器
+     实际理解的路径为:http://localhost:8088/myweb/th.jpg
+      -->
+     <center>
+        <image src="./th.jpg"><br>
+        <input type = "text" size = "32">
+        <input type = "button" value = "百度一下"><br>
+        <a href = "./reg.html">去注册</a>
+        <a href = "./login.html">去登录</a>
+     </center>
+  </body>
+
+</html>

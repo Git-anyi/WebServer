@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+
+</head>
+<body>
+
+<input type="text" id="i1">
+<input type="button" value="按钮" onclick="myfn()">
+
+<div id="d1">abc</div>
+
+<script type="text/javascript">
+  
+  function myfn(){
+	  //取出i1文本框的内容 赋值给d1
+	  d1.innerText=i1.value;
+  }
+
+  //通过id查找页面中的的元素对象
+  /* var d = document.getElementById("d1");
+  d.innerText="lailelaodi"; */
+  
+  //谷歌浏览器为页面中添加id的元素
+  //自动添加了下面这行代码
+  var d1 = document.getElementById("d1");
+  d1.innerText="来了老弟";
+  
+</script>
+
+</body>
+</html>

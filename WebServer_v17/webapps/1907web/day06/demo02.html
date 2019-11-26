@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<input type="text" id="i1">
+<input type="button" value="按钮"  id="b1">
+
+<!-- 引入jq框架 -->
+<script type="text/javascript" src="../js/jquery-1.4.2.js">
+
+</script>
+
+<script type="text/javascript">
+  //js中动态绑定事件的方式
+  /* var b1 = document.getElementById("b1");
+  b1.onclick = function(){
+	  alert("xxx");
+  } */
+  
+  //jq中动态绑定事件的方式
+  $("#b1").click(function(){
+	  //alert("xxxx");
+	  //js中获取文本框对象 和获取里面的值的方式
+	  //var i1 = document.getElementById("i1");
+	  //alert(i1.value);
+	  
+	  //jq中获取文本框对象 和获取里面的值的方式
+	  //js对象和jq对象有本质的区别 不能混着使用
+	  alert($("#i1").val());
+  });
+  
+
+</script>
+
+</body>
+</html>
